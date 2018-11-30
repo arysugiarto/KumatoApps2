@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add To-Do List"
+        android:layout_marginBottom="16dp"
+        android:textSize="19sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remainder Me"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:text="..."
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_one_time_alarm_date" />
+        <TextView
+            android:id="@+id/tv_one_time_alarm_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tanggal Remainder"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:text="..."
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_one_time_alarm_time" />
+        <TextView
+            android:id="@+id/tv_one_time_alarm_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Waktu Remainder"
+            android:layout_marginBottom="16dp"/>
+    </LinearLayout>
+    <EditText
+        android:id="@+id/edt_one_time_alarm_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title Kegiatan"
+        android:layout_marginBottom="16dp"/>
+    <Button
+        android:id="@+id/btn_set_one_time_alarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textColor="@color/colorWhite"
+        android:background="@color/hijau"
+        android:layout_marginLeft="250dp"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Repeating Alarm"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:text="..."
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_repeating_time_alarm_time" />
+        <TextView
+            android:id="@+id/tv_repeating_alarm_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Waktu Remainder"
+            android:layout_marginBottom="16dp"/>
+    </LinearLayout>
+    <EditText
+        android:id="@+id/edt_repeating_alarm_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title Kegiatan"
+        android:layout_marginBottom="16dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_repeating_time_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/hijau"
+            android:textColor="@color/colorWhite"
+            android:text="Save"
+            android:layout_weight="0.5"
+            />
+        <Button
+            android:id="@+id/btn_cancel_repeating_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Batal"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorPrimary"
+            android:layout_weight="0.5"
+            />
+    </LinearLayout>
+
+</LinearLayout>
