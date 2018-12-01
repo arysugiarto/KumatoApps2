@@ -81,11 +81,7 @@ public class PomodoroActivity extends AppCompatActivity implements NavigationVie
             @Override
             public void onFinish() {
                 mTimerRunnig = false;
-<<<<<<< HEAD
                 btnstart_pause.setText("Mulai");
-=======
-                btnstart_pause.setText("Start");
->>>>>>> master
                 btnstart_pause.setVisibility(View.INVISIBLE);
                 btnreset.setVisibility(View.VISIBLE);
 
@@ -93,22 +89,14 @@ public class PomodoroActivity extends AppCompatActivity implements NavigationVie
         }.start();
 
         mTimerRunnig = true;
-<<<<<<< HEAD
         btnstart_pause.setText("Jeda");
-=======
-        btnstart_pause.setText("Pause");
->>>>>>> master
         btnreset.setVisibility(View.VISIBLE);
     }
 
     private void pauseTimer() {
         mCountDownTimer.cancel();
         mTimerRunnig = false;
-<<<<<<< HEAD
         btnstart_pause.setText("Mulai");
-=======
-        btnstart_pause.setText("Start");
->>>>>>> master
         btnreset.setVisibility(View.VISIBLE);
     }
 
