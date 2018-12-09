@@ -39,6 +39,15 @@
             android:layout_height="wrap_content"
             android:text="..." />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_event_note_black_24dp" />
+
+
         <TextView
             android:id="@+id/tv_one_time_alarm_date"
             android:layout_width="wrap_content"
@@ -59,6 +68,14 @@
             android:layout_height="wrap_content"
             android:text="..." />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_access_alarm_black_24dp" />
+
         <TextView
             android:id="@+id/tv_one_time_alarm_time"
             android:layout_width="wrap_content"
@@ -74,14 +91,22 @@
         android:layout_marginBottom="8dp"
         android:hint="Nama Kegiatan" />
 
-    <Button
-        android:id="@+id/btn_set_one_time_alarm"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@color/hijau"
-        android:text="Simpan"
-        android:textColor="@color/colorWhite" />
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/btn_set_one_time_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="16dp"
+            android:background="@color/hijau"
+            android:text="Simpan"
+            android:textColor="@color/colorWhite" />
+    </RelativeLayout>
+
 
     <TextView
         android:layout_width="match_parent"
@@ -103,6 +128,14 @@
             android:layout_height="wrap_content"
             android:text="..." />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_access_alarm_black_24dp" />
+
         <TextView
             android:id="@+id/tv_repeating_alarm_time"
             android:layout_width="wrap_content"
@@ -121,6 +154,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal">
 
         <Button
@@ -139,7 +173,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_weight="0.5"
-            android:background="@color/colorPrimary"
+            android:background="@color/merah"
             android:text="Batal"
             android:textColor="@color/colorWhite" />
     </LinearLayout>

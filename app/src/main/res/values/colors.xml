@@ -3,6 +3,7 @@
     <color name="colorPrimary">#AB0103</color>
     <color name="colorPrimaryDark">#AB0103</color>
     <color name="colorAccent">#AB0103</color>
-    <color name="hijau">#128f0b</color>
+    <color name="hijau">#65ad43</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="merah">#da2524</color>
 </resources>

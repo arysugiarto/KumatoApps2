@@ -17,7 +17,9 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
-public class PomodoroActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener  {
+public class PomodoroActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener,
+        View.OnClickListener  {
 
     private static final long START_TIME_IN_MILIS = 1500000;
     private TextView countdown;
