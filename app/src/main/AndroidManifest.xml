@@ -22,14 +22,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+        </activity>
         <activity android:name=".FormAddAcctivity" />
         <activity android:name=".PomodoroActivity" />
 
         <receiver
             android:name=".AlarmService.AlarmReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
+
+        <activity android:name=".onboarding.OnboardingActivity">
+
+        </activity>
     </application>
 
 </manifest>

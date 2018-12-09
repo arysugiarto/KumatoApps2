@@ -39,11 +39,7 @@
             android:id="@+id/tombolreset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
             android:text="Ulang"
-=======
-            android:text="Reset"
->>>>>>> master
             android:layout_margin="2dp"
             android:textColor="#ffff"
             android:layout_gravity="center_horizontal"
