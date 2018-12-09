@@ -5,24 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp"
-    tools:context=".MainActivity">
-
-    <TextView
+    tools:context=".FormAddAcctivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar1"
+        app:theme="@style/ToolbarTheme"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Tambah Daftar Kegiatan"
-        android:textSize="19sp"
-        android:textStyle="bold" />
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@color/colorWhite"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="Tambah Kegiatan" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:text="Ingatkan Saya"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
@@ -37,6 +37,7 @@
             android:id="@+id/btn_one_time_alarm_date"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="..." />
 
         <ImageView
@@ -66,6 +67,7 @@
             android:id="@+id/btn_one_time_alarm_time"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="..." />
 
         <ImageView
@@ -88,6 +90,8 @@
         android:id="@+id/edt_one_time_alarm_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginBottom="8dp"
         android:hint="Nama Kegiatan" />
 
@@ -102,6 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="16dp"
+            android:layout_marginRight="10dp"
             android:background="@color/hijau"
             android:text="Simpan"
             android:textColor="@color/colorWhite" />
@@ -114,6 +119,8 @@
         android:layout_marginBottom="8dp"
         android:text="Mengulang Alarm"
         android:textColor="@color/colorPrimary"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -126,6 +133,7 @@
             android:id="@+id/btn_repeating_time_alarm_time"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="..." />
 
         <ImageView
@@ -149,6 +157,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:hint="Nama Kegiatan" />
 
     <LinearLayout
@@ -161,8 +171,9 @@
             android:id="@+id/btn_repeating_time_alarm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
             android:layout_weight="0.5"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:background="@color/hijau"
             android:text="Simpan"
             android:textColor="@color/colorWhite" />
@@ -171,7 +182,8 @@
             android:id="@+id/btn_cancel_repeating_alarm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_weight="0.5"
             android:background="@color/merah"
             android:text="Batal"
