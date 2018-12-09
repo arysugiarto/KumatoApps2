@@ -19,7 +19,8 @@
         android:background="@color/colorWhite"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        app:menu="@menu/activity_main_drawer"
+        app:itemIconTint="@color/colorPrimary"/>
 
     <include
         layout="@layout/pomodoro_content"
