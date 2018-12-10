@@ -26,22 +26,22 @@
 
         <Button
             android:id="@+id/tombolstart_pause"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="2dp"
-            android:backgroundTint="@color/hijau"
+            android:layout_margin="10dp"
             android:text="Mulai"
+            android:background="@drawable/rounded_btnhijau"
             android:textColor="#ffff" />
 
         <Button
             android:id="@+id/tombolreset"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Ulang"
-            android:layout_margin="2dp"
+            android:layout_margin="10dp"
             android:layout_gravity="center_horizontal"
-            android:backgroundTint="@color/merah"
+            android:background="@drawable/rounded_btnmerah"
             android:textColor="#ffff" />
 
     </LinearLayout>

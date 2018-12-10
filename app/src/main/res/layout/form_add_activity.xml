@@ -98,16 +98,16 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="4dp">
 
         <Button
             android:id="@+id/btn_set_one_time_alarm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="10dp"
-            android:background="@color/hijau"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/rounded_btnhijau"
             android:text="Simpan"
             android:textColor="@color/colorWhite" />
     </RelativeLayout>
@@ -116,7 +116,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:text="Mengulang Alarm"
         android:textColor="@color/colorPrimary"
         android:layout_marginLeft="10dp"
@@ -156,7 +156,7 @@
         android:id="@+id/edt_repeating_alarm_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:hint="Nama Kegiatan" />
@@ -174,7 +174,7 @@
             android:layout_weight="0.5"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@color/hijau"
+            android:background="@drawable/rounded_btnhijau"
             android:text="Simpan"
             android:textColor="@color/colorWhite" />
 
@@ -185,7 +185,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="0.5"
-            android:background="@color/merah"
+            android:background="@drawable/rounded_btnmerah"
             android:text="Batal"
             android:textColor="@color/colorWhite" />
     </LinearLayout>
