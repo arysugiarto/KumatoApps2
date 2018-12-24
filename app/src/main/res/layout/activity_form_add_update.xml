@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_form_add_update"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:orientation="vertical"
     tools:context=".FormAddUpdateActivity">
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,15 +22,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:title="Tambah Kegiatan" />
 
         </android.support.design.widget.AppBarLayout>
+
     </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Ingatkan Saya"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
         android:orientation="horizontal">
-
 
         <Button
             android:id="@+id/btn_one_time_alarm_date"
@@ -46,7 +64,6 @@
             android:layout_marginRight="5dp"
             android:src="@drawable/ic_event_note_black_24dp" />
 
-
         <TextView
             android:id="@+id/tv_one_time_alarm_date"
             android:layout_width="wrap_content"
@@ -55,9 +72,13 @@
             android:text="Tanggal Kegiatan" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
         android:orientation="horizontal">
 
         <Button
@@ -82,60 +103,82 @@
             android:layout_marginBottom="8dp"
             android:text="Waktu Kegiatan" />
     </LinearLayout>
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="4dp"
         android:layout_marginTop="4dp">
-
 
         <EditText
             android:id="@+id/edt_one_time_alarm_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="8dp"
             android:hint="Nama Kegiatan" />
+
     </RelativeLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/activity_vertical_margin">
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="4dp">
+
         <EditText
             android:id="@+id/edt_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="1"
             android:hint="@string/kegiatan"
-            android:inputType="textCapSentences"/>
+            android:inputType="textCapSentences"
+            android:maxLines="1" />
+
     </android.support.design.widget.TextInputLayout>
+
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="@dimen/activity_vertical_margin">
+
         <EditText
             android:id="@+id/edt_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="1"
             android:hint="@string/deskripsi"
-            android:inputType="textCapSentences"/>
+            android:inputType="textCapSentences"
+            android:maxLines="1" />
+
     </android.support.design.widget.TextInputLayout>
-    <Button
-        android:id="@+id/btn_set_one_time_alarm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="4dp"
-        android:layout_marginEnd="10dp"
-        android:text="Simpan"
-        />
-    <Button
-        android:id="@+id/btn_submit"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/submit"
-        style="@style/Base.Widget.AppCompat.Button.Colored"/>
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_set_one_time_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Simpan" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_below="@id/btn_set_one_time_alarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/submit" />
+    </RelativeLayout>
+
+
 
 </LinearLayout>
