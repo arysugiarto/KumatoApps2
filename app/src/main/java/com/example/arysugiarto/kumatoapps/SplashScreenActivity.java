@@ -7,12 +7,11 @@ import android.os.Bundle;
 import android.view.Window;
 import android.widget.TextView;
 
-import com.example.arysugiarto.kumatoapps.onboarding.OnboardingActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
 
-        TextView tvSplash;
+//        TextView tvSplash;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    startActivity(new Intent(getApplicationContext(), OnboardingActivity.class));
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
                 }
             }, 3000L); //3000 L = 3 detik

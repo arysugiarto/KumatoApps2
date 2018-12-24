@@ -13,4 +13,6 @@
     <string name="hapus">Hapus</string>
     <string name="title_activity_pager">PagerActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="kegiatan">Kegiatan</string>
+    <string name="deskripsi">Deskripsi</string>
 </resources>
