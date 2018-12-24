@@ -3,7 +3,6 @@
     <color name="colorPrimary">#AB0103</color>
     <color name="colorPrimaryDark">#AB0103</color>
     <color name="colorAccent">#AB0103</color>
-    <color name="btnhijau">#65ad43</color>
+    <color name="btnhijau">#39b44a</color>
     <color name="colorWhite">#FFFFFF</color>
-    <color name="btnmerah">#da2524</color>
 </resources>
