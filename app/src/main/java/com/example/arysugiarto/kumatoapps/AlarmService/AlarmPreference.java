@@ -8,8 +8,6 @@ public class AlarmPreference {
     private final String KEY_ONE_TIME_DATE  = "oneTimDate";
     private final String KEY_ONE_TIME_TIME  = "oneTimeTime";
     private final String KEY_ONE_TIME_MESSAGE  = "oneTimeMessage";
-    private final String KEY_REPEATING_TIME  = "repeatingTime";
-    private final String KEY_REPEATING_MESSAGE  = "repeatingMessage";
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor editor;
 
@@ -37,20 +35,6 @@ public class AlarmPreference {
     }
     public String getOneTimeMessage(){
         return mSharedPreferences.getString(KEY_ONE_TIME_MESSAGE, null);
-    }
-    public void setRepeatingTime(String time){
-        editor.putString(KEY_REPEATING_TIME, time);
-        editor.commit();
-    }
-    public String getRepeatingTime(){
-        return mSharedPreferences.getString(KEY_REPEATING_TIME, null);
-    }
-    public void setRepeatingMessage(String message){
-        editor.putString(KEY_REPEATING_MESSAGE, message);
-        editor.commit();
-    }
-    public String getRepeatingMessage(){
-        return mSharedPreferences.getString(KEY_REPEATING_MESSAGE, null);
     }
     public void clear(){
         editor.clear();

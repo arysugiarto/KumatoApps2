@@ -9,7 +9,7 @@ import com.example.arysugiarto.kumatoapps.db.DatabaseContract.NoteColumns;
 import static com.example.arysugiarto.kumatoapps.db.DatabaseContract.NoteColumns.TABLE_NAME;
 
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class  DatabaseHelper extends SQLiteOpenHelper {
 
     public static String DATABASE_NAME = "dbnoteapp";
 

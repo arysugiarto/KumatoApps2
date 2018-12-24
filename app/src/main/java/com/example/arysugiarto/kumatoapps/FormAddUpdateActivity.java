@@ -50,7 +50,7 @@ public class FormAddUpdateActivity extends AppCompatActivity
 
     private TextView tvOneTimeDate, tvOneTimeTime;
     private EditText edtOneTimeMessage;
-    private Button btnOneTimeDate, btnOneTimeTime, btnOneTime;
+    private Button btnOneTimeDate, btnOneTimeTime;
     private Calendar calOneTimeDate, calOneTimeTime;
     private AlarmReceiver alarmReceiver;
     private AlarmPreference alarmPreference;
@@ -67,10 +67,8 @@ public class FormAddUpdateActivity extends AppCompatActivity
         edtOneTimeMessage = (EditText) findViewById(R.id.edt_one_time_alarm_message);
         btnOneTimeDate = (Button) findViewById(R.id.btn_one_time_alarm_date);
         btnOneTimeTime = (Button) findViewById(R.id.btn_one_time_alarm_time);
-        btnOneTime = (Button) findViewById(R.id.btn_set_one_time_alarm);
         btnOneTimeDate.setOnClickListener(this);
         btnOneTimeTime.setOnClickListener(this);
-        btnOneTime.setOnClickListener(this);
 
         edtTitle = (EditText) findViewById(R.id.edt_title);
         edtDescription = (EditText) findViewById(R.id.edt_description);
@@ -135,22 +133,22 @@ public class FormAddUpdateActivity extends AppCompatActivity
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.btn_set_one_time_alarm) {
+        if (view.getId() == R.id.btn_submit) {
             String title = edtTitle.getText().toString().trim();
             String description = edtDescription.getText().toString().trim();
             boolean isEmpty = false;
             /*
             Jika fieldnya masih kosong maka tampilkan error
              */
-            if (TextUtils.isEmpty(title)) {
-                isEmpty = true;
-                edtTitle.setError("Field can not be blank");
-            }
+//            if (TextUtils.isEmpty(title)) {
+//                isEmpty = true;
+//                edtTitle.setError("Data Tidak boleh kosong");
+//                edtDescription.setError("Data Tidak boleh kosong");
+//            }
             if (!isEmpty) {
                 Note newNote = new Note();
                 newNote.setTitle(title);
                 newNote.setDescription(description);
-
                 Intent intent = new Intent();
 
                 /*
@@ -195,7 +193,7 @@ public class FormAddUpdateActivity extends AppCompatActivity
                     tvOneTimeTime.setText(dateFormat.format(calOneTimeTime.getTime()));
                 }
             }, currentDate.get(Calendar.HOUR_OF_DAY), currentDate.get(Calendar.MINUTE), true).show();
-        } else if (view.getId() == R.id.btn_set_one_time_alarm) {
+        } else if (view.getId() == R.id.btn_submit) {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             String oneTimeDate = dateFormat.format(calOneTimeDate.getTime());
             SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
@@ -226,7 +224,8 @@ public class FormAddUpdateActivity extends AppCompatActivity
                 showAlertDialog(ALERT_DIALOG_DELETE);
                 break;
             case android.R.id.home:
-                showAlertDialog(ALERT_DIALOG_CLOSE);
+                finish();
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -234,7 +233,8 @@ public class FormAddUpdateActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        showAlertDialog(ALERT_DIALOG_CLOSE);
+        super.onBackPressed();
+        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
     }
 
     final int ALERT_DIALOG_CLOSE = 10;
@@ -250,12 +250,12 @@ public class FormAddUpdateActivity extends AppCompatActivity
         String dialogTitle = null, dialogMessage = null;
 
         if (isDialogClose) {
-            dialogTitle = "Batal";
+            dialogTitle = "Cancel";
             dialogMessage = "Apakah anda ingin membatalkan perubahan pada form?";
-        } else {
+        }else {
             dialogMessage = "Apakah anda yakin ingin menghapus item ini?";
-            dialogTitle = "Hapus Note";
-        }
+            dialogTitle = "Hapus List";
+    }
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 

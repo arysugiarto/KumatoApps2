@@ -80,4 +80,6 @@ public class Note implements Parcelable {
             return new Note[size];
         }
     };
+
+
 }

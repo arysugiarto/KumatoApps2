@@ -21,7 +21,6 @@ import java.util.Calendar;
 
 public class AlarmReceiver  extends BroadcastReceiver {
     public static final String TYPE_ONE_TIME = "OneTimeAlarm";
-    public static final String TYPE_REPEATING = "RepeatingAlarm";
     public static final String EXTRA_MESSAGE = "message";
     public static final String EXTRA_TYPE = "type";
     private final int NOTIF_ID_ONETIME = 100;
@@ -34,7 +33,7 @@ public class AlarmReceiver  extends BroadcastReceiver {
         // an Intent broadcast.
         String type = intent.getStringExtra(EXTRA_TYPE);
         String message = intent.getStringExtra(EXTRA_MESSAGE);
-        String title = type.equalsIgnoreCase(TYPE_ONE_TIME) ? "One Time Alarm":"Reapeating Alarm";
+        String title = type.equalsIgnoreCase(TYPE_ONE_TIME) ? "Remainder Task":"Reapeating Alarm";
         int notifId = type.equalsIgnoreCase(TYPE_ONE_TIME) ? NOTIF_ID_ONETIME : NOTIF_ID_REPEATING;
         showAlarmNotification(context, title, message, notifId);
 
@@ -44,7 +43,7 @@ public class AlarmReceiver  extends BroadcastReceiver {
         NotificationManager notificationManagerCompat = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
-                .setSmallIcon(R.drawable.kumato)
+                .setSmallIcon(R.drawable.iconnotif)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setColor(ContextCompat.getColor(context, android.R.color.transparent))
@@ -82,6 +81,6 @@ public class AlarmReceiver  extends BroadcastReceiver {
         int requestCode = NOTIF_ID_ONETIME;
         PendingIntent pendingIntent =  PendingIntent.getBroadcast(context, requestCode, intent, 0);
         alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
-        Toast.makeText(context, "One time alarm set up", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Waktu Remainder Telah di atur", Toast.LENGTH_SHORT).show();
     }
 }

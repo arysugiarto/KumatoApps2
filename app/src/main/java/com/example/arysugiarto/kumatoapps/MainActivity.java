@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        getSupportActionBar().setTitle("Notes");
+        getSupportActionBar().setTitle("Kumato Apps");
 
         rvNotes = (RecyclerView)findViewById(R.id.rv_notes);
         rvNotes.setLayoutManager(new LinearLayoutManager(this));
@@ -80,9 +80,6 @@ public class MainActivity extends AppCompatActivity
 
 
     }
-
-
-
 
     @Override
     public void onClick(View view) {
