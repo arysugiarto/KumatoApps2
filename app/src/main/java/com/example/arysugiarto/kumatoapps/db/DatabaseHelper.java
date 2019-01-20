@@ -11,7 +11,7 @@ import static com.example.arysugiarto.kumatoapps.db.DatabaseContract.NoteColumns
 
 public class  DatabaseHelper extends SQLiteOpenHelper {
 
-    public static String DATABASE_NAME = "dbnoteapp";
+    public static String DATABASE_NAME = "dbkumato";
 
     private static final int DATABASE_VERSION = 1;
 
@@ -24,7 +24,9 @@ public class  DatabaseHelper extends SQLiteOpenHelper {
             NoteColumns._ID,
             NoteColumns.TITLE,
             NoteColumns.DESCRIPTION,
-            NoteColumns.DATE
+            NoteColumns.DATE,
+            NoteColumns.ONDATE,
+            NoteColumns.ONTIME
     );
 
     public DatabaseHelper(Context context) {
@@ -36,10 +38,6 @@ public class  DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_TABLE_NOTE);
     }
 
-    /*
-    Method onUpgrade akan di panggil ketika terjadi perbedaan versi
-    Gunakan method onUpgrade untuk melakukan proses migrasi data
-     */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         /*

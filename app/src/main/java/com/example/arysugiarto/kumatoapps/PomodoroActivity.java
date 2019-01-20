@@ -163,8 +163,8 @@ public class PomodoroActivity extends AppCompatActivity
             Intent intent = new Intent(this,MainActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_pomodoro) {
-            Intent intent = new Intent(this,PomodoroActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(this,PomodoroActivity.class);
+//            startActivity(intent);
 
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

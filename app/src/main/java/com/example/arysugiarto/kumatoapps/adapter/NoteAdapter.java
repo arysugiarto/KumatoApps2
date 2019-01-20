@@ -43,7 +43,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewholder
     @Override
     public void onBindViewHolder(NoteViewholder holder, int position) {
         holder.tvTitle.setText(getListNotes().get(position).getTitle());
-        holder.tvDate.setText(getListNotes().get(position).getDate());
+//        holder.tvDate.setText(getListNotes().get(position).getOndate());
+        holder.tvTime.setText(getListNotes().get(position).getOntime());
         holder.tvDescription.setText(getListNotes().get(position).getDescription());
         holder.cvNote.setOnClickListener(new CustomOnItemClickListener(position, new CustomOnItemClickListener.OnItemClickCallback() {
             @Override
@@ -62,14 +63,15 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewholder
     }
 
     class NoteViewholder extends RecyclerView.ViewHolder{
-        TextView tvTitle, tvDescription, tvDate;
+        TextView tvTitle, tvDescription, tvTime;
         CardView cvNote;
 
         NoteViewholder(View itemView) {
             super(itemView);
             tvTitle = (TextView)itemView.findViewById(R.id.tv_item_title);
             tvDescription = (TextView)itemView.findViewById(R.id.tv_item_description);
-            tvDate = (TextView)itemView.findViewById(R.id.tv_item_date);
+//            tvDate = (TextView)itemView.findViewById(R.id.tv_item_date);
+            tvTime = (TextView)itemView.findViewById(R.id.tv_item_time);
             cvNote = (CardView)itemView.findViewById(R.id.cv_item_note);
         }
     }

@@ -1,7 +1,15 @@
 package com.example.arysugiarto.kumatoapps.entity;
 
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.example.arysugiarto.kumatoapps.db.DatabaseContract;
+
+import static android.provider.BaseColumns._ID;
+import static com.example.arysugiarto.kumatoapps.db.DatabaseHelper.DATABASE_NAME;
 
 /**
  * Created by sidiqpermana on 11/23/16.
@@ -11,6 +19,8 @@ public class Note implements Parcelable {
     private int id;
     private String title;
     private String description;
+    private String ondate;
+    private String ontime;
     private String date;
 
     public int getId() {
@@ -37,6 +47,22 @@ public class Note implements Parcelable {
         this.description = description;
     }
 
+    public String getOndate() {
+        return ondate;
+    }
+
+    public void setOndate(String ondate) {
+        this.ondate = ondate;
+    }
+
+    public String getOntime() {
+        return ontime;
+    }
+
+    public void setOntime(String ontime) {
+        this.ontime = ontime;
+    }
+
     public String getDate() {
         return date;
     }
@@ -61,6 +87,7 @@ public class Note implements Parcelable {
 
     public Note() {
     }
+
 
     protected Note(Parcel in) {
         this.id = in.readInt();

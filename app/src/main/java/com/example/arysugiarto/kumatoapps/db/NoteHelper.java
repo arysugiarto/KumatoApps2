@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import static android.provider.BaseColumns._ID;
 import static com.example.arysugiarto.kumatoapps.db.DatabaseContract.NoteColumns.DATE;
 import static com.example.arysugiarto.kumatoapps.db.DatabaseContract.NoteColumns.DESCRIPTION;
+import static com.example.arysugiarto.kumatoapps.db.DatabaseContract.NoteColumns.ONDATE;
+import static com.example.arysugiarto.kumatoapps.db.DatabaseContract.NoteColumns.ONTIME;
 import static com.example.arysugiarto.kumatoapps.db.DatabaseContract.NoteColumns.TABLE_NAME;
 import static com.example.arysugiarto.kumatoapps.db.DatabaseContract.NoteColumns.TITLE;
 
@@ -61,6 +63,8 @@ public class NoteHelper {
                 note.setTitle(cursor.getString(cursor.getColumnIndexOrThrow(TITLE)));
                 note.setDescription(cursor.getString(cursor.getColumnIndexOrThrow(DESCRIPTION)));
                 note.setDate(cursor.getString(cursor.getColumnIndexOrThrow(DATE)));
+                note.setOndate(cursor.getString(cursor.getColumnIndexOrThrow(ONDATE)));
+                note.setOntime(cursor.getString(cursor.getColumnIndexOrThrow(ONTIME)));
 
                 arrayList.add(note);
                 cursor.moveToNext();
@@ -82,6 +86,8 @@ public class NoteHelper {
         initialValues.put(TITLE, note.getTitle());
         initialValues.put(DESCRIPTION, note.getDescription());
         initialValues.put(DATE, note.getDate());
+        initialValues.put(ONDATE, note.getOndate());
+        initialValues.put(ONTIME, note.getOntime());
         return database.insert(DATABASE_TABLE,
                 null, initialValues);
     }
@@ -97,6 +103,8 @@ public class NoteHelper {
         args.put(TITLE, note.getTitle());
         args.put(DESCRIPTION, note.getDescription());
         args.put(DATE, note.getDate());
+        args.put(ONDATE, note.getOndate());
+        args.put(ONTIME, note.getOntime());
         return database.update(DATABASE_TABLE, args,
                 _ID + "= '" + note.getId() + "'", null);
     }

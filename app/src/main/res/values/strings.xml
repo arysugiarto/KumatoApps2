@@ -9,10 +9,17 @@
     <string name="date">Date</string>
     <string name="title">Judul</string>
     <string name="description">Description</string>
-    <string name="submit">Submit</string>
+    <string name="submit">Simpan</string>
+    <string name="ubah">ubah</string>
     <string name="hapus">Hapus</string>
     <string name="title_activity_pager">PagerActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="kegiatan">Kegiatan</string>
     <string name="deskripsi">Deskripsi</string>
+    <string name="Ingatkan_Saya">Ingatkan Saya</string>
+    <string name="tambah">Tambah Aktifitas</string>
+    <string name="update">Ubah Aktifitas</string>
+    <string name="waktu">Waktu Kegiatan</string>
+    <string name="tanggal">Tanggal Kegiatan</string>
+
 </resources>

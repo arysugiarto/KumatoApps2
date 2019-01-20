@@ -3,10 +3,14 @@ package com.example.arysugiarto.kumatoapps;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,13 +18,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.arysugiarto.kumatoapps.adapter.NoteAdapter;
 import com.example.arysugiarto.kumatoapps.db.NoteHelper;
 import com.example.arysugiarto.kumatoapps.entity.Note;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
 
@@ -32,11 +37,17 @@ public class MainActivity extends AppCompatActivity
 
     RecyclerView rvNotes;
     ProgressBar progressBar;
+    ImageView tvdataKosong;
+    TextView tvTextKosong;
     FloatingActionButton fabAdd;
+
+
+
 
     private ArrayList<Note> list;
     private NoteAdapter adapter;
     private NoteHelper noteHelper;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     public MainActivity() {
     }
@@ -50,27 +61,41 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar,
+
+                R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
         getSupportActionBar().setTitle("Kumato Apps");
+
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         rvNotes = (RecyclerView)findViewById(R.id.rv_notes);
         rvNotes.setLayoutManager(new LinearLayoutManager(this));
         rvNotes.setHasFixedSize(true);
 
         progressBar = (ProgressBar)findViewById(R.id.progressbar);
+        tvdataKosong = (ImageView) findViewById(R.id.tvdatakosong);
+        tvTextKosong = (TextView) findViewById(R.id.tvtextkosong);
+
         fabAdd = (FloatingActionButton)findViewById(R.id.fab_add);
         fabAdd.setOnClickListener(this);
+
+
 
         noteHelper = new NoteHelper(this);
         noteHelper.open();
 
         list = new ArrayList<>();
+
+
 
         adapter = new NoteAdapter(this);
         adapter.setListNotes(list);
@@ -86,8 +111,14 @@ public class MainActivity extends AppCompatActivity
         if (view.getId() == R.id.fab_add){
             Intent intent = new Intent(MainActivity.this, FormAddUpdateActivity.class);
             startActivityForResult(intent, FormAddUpdateActivity.REQUEST_ADD);
+//            String name = "floating_button";
+//            Bundle params = new Bundle();
+//            params.putString("floating_button", name);
+//            mFirebaseAnalytics.logEvent("tombol_add", params);
         }
     }
+
+
     private class LoadNoteAsync extends AsyncTask<Void, Void, ArrayList<Note>> {
 
         @Override
@@ -110,13 +141,20 @@ public class MainActivity extends AppCompatActivity
             super.onPostExecute(notes);
             progressBar.setVisibility(View.GONE);
 
+
             list.addAll(notes);
             adapter.setListNotes(list);
             adapter.notifyDataSetChanged();
 
-            if (list.size() == 0){
+            if (list.size() == 0) {
+                tvdataKosong.setVisibility(View.VISIBLE);
+                tvTextKosong.setVisibility(View.VISIBLE);
                 showSnackbarMessage("Tidak ada data saat ini");
+            }else{
+                tvdataKosong.setVisibility(View.GONE);
+                tvTextKosong.setVisibility(View.GONE);
             }
+
         }
     }
 
@@ -154,7 +192,9 @@ public class MainActivity extends AppCompatActivity
                 adapter.notifyDataSetChanged();
                 showSnackbarMessage("Satu item berhasil dihapus");
             }
+
         }
+
     }
 
     @Override
@@ -164,6 +204,7 @@ public class MainActivity extends AppCompatActivity
             noteHelper.close();
         }
     }
+
 
     /**
      * Tampilkan snackbar
@@ -201,7 +242,10 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            if (item.getItemId()==R.id.action_settings){
+                Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+                startActivity(mIntent);
+            }
         }
 
         return super.onOptionsItemSelected(item);

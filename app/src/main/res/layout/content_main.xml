@@ -11,6 +11,25 @@
         android:layout_height="48dp"
         android:id="@+id/progressbar"
         android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/tvdatakosong"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/handle" />
+    <TextView
+        android:layout_alignBottom="@+id/tvdatakosong"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:id="@+id/tvtextkosong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kamu belum mempunyai List Kegiatan"/>
+
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_notes"
         android:layout_width="match_parent"
